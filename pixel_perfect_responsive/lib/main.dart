@@ -37,28 +37,38 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register', style: TextStyle(fontSize: 20.sp),),
+        title: Text(
+          'Register',
+          style: TextStyle(fontSize: 20.sp),
+        ),
         backgroundColor: const Color(0xFF306EDF),
-        leading: const Icon(Icons.backspace),
+        leading: const Icon(Icons.arrow_back_ios),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 52.h),
-              Text('Sign Up to Master').fontSize(18.sp).fontWeight(FontWeight.w700).textColor(Colors.black),
+              const Text('Sign Up to Master')
+                  .fontSize(18.sp)
+                  .fontWeight(FontWeight.w700)
+                  .textColor(Colors.black),
               SizedBox(height: 4.h),
               Wrap(
                 children: [
-                  Text('Already have an account?').fontWeight(FontWeight.w700).textColor(Colors.grey).fontSize(14.sp),
-                  Text('Login').fontWeight(FontWeight.w700).textColor(Colors.purple).fontSize(14.sp),
+                  const Text('Already have an account?')
+                      .fontWeight(FontWeight.w700)
+                      .textColor(Colors.grey)
+                      .fontSize(14.sp),
+                  const Text('Login')
+                      .fontWeight(FontWeight.w700)
+                      .textColor(Colors.purple)
+                      .fontSize(14.sp),
                 ],
               ),
               SizedBox(height: 24.h),
@@ -70,18 +80,36 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 16.h),
               const _buidTextField(hint: 'Confirm Password'),
               SizedBox(height: 16.h),
-              FinOSButton(text: 'Create Account', colorBackground: Color(0xFF306EDF), onPressed: () {}),
+              FinOSButton(
+                  text: 'Create Account',
+                  colorBackground: const Color(0xFF306EDF),
+                  onPressed: () {}),
               Row(
                 children: [
-                  Expanded(child: Divider(color: Colors.red,)),
+                  const Expanded(
+                      child: Divider(
+                    color: Colors.red,
+                  )),
                   SizedBox(width: 16.w),
-                  const Text('or Sign up via').fontWeight(FontWeight.w500).textColor(Colors.lightGreen).fontSize(14.sp),
+                  const Text('or Sign up via')
+                      .fontWeight(FontWeight.w500)
+                      .textColor(Colors.lightGreen)
+                      .fontSize(14.sp),
                   SizedBox(width: 16.w),
-                  Expanded(child: Divider(color: Colors.red,)),
+                  const Expanded(
+                      child: Divider(
+                    color: Colors.red,
+                  )),
                 ],
               ).padding(top: 24.h),
-              FinOSButton(text: 'Google', colorBackground: Color(0xFF306EDF), onPressed: () {}, iconPath: 'assets/icons/vietnam',).padding(top: 16.h),
-          ],).padding(horizontal: 24.w),
+              FinOSButton(
+                text: 'Google',
+                colorBackground: const Color(0xFF306EDF),
+                onPressed: () {},
+                iconPath: 'assets/icons/vietnam',
+              ).padding(top: 16.h),
+            ],
+          ).padding(horizontal: 24.w),
         ),
       ),
     );
@@ -90,9 +118,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class _buidTextField extends StatelessWidget {
   final String hint;
-  
+
   const _buidTextField({
-    Key? key, required this.hint,
+    Key? key,
+    required this.hint,
   }) : super(key: key);
 
   @override
@@ -101,11 +130,11 @@ class _buidTextField extends StatelessWidget {
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(color: Colors.transparent, width: 0),
+          borderSide: const BorderSide(color: Colors.transparent, width: 0),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(color: Colors.transparent, width: 0),
+          borderSide: const BorderSide(color: Colors.transparent, width: 0),
         ),
         contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         filled: true,
